@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form novalidate>
+        <label for="mail">Email</label>
+        <input type='email' id='email' required data-id="0">
+        <span data-id="0"></span>
+        <label for="country">Country</label>
+        <input type="text" id="country" required data-id="1">
+        <span data-id="1"></span>
+        <label for="zipcode">Zip-code</label>
+        <input type="text" id="zipcode" required data-id="2" pattern="[A-Z]*[0-9]+">
+        <span data-id="2"></span>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" required data-id="3" pattern="[A-Z0-9a-z]+" minlength="8">
+        <span data-id="3"></span>
+        <label for="checkpass">Password's checking</label>
+        <input type="password" id="checkpass" required data-id="4">
+        <span data-id="4"></span>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

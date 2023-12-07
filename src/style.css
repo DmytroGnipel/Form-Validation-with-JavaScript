@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, label {
+    width: 400px;
+    height: 35px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 1px solid green;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+span {
+    font-size: 12px;
+    height: 12px;
+}
+
+.error {
+    color: red;
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    border: 2px solid white;
+    animation-name: blinking;
+    animation-duration: 1s;
+    animation-iteration-count: 100;
+}
+
+@keyframes blinking {
+    50% {
+      border-color: red;
+    }
+}
+
