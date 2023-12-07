@@ -1,4 +1,5 @@
 import './style.css'
+import Image from './image.jpg'
 
 //get needed elements
 const errorFields = document.querySelectorAll('span')
@@ -80,10 +81,12 @@ const reportErrorAllAbove = (inputId) => {
 ;(function submit () {
     button.addEventListener('click', function (event) {
         event.preventDefault()
-        if (form.checkValidity()) console.log('take high five')
-        else reportErrorAllAbove(4)
+        if (form.checkValidity()) giveHighFive()
+        else {
+    reportErrorAllAbove(4)
         button.textContent = answers[10]
         button.classList.add('wrong')
+        }
     })
 })()
 
@@ -108,6 +111,28 @@ function cleaning () {
         }
 
     }
+}
+
+//give high five
+function giveHighFive() {
+    //remove entire body html
+    const body = document.querySelector('body')
+    body.innerHTML = ''
+    //create button for subsequent page refresh 
+    const button = document.createElement('button')
+    button.textContent = 'Want more?'
+    //litle correction of the body style
+    body.style.flexDirection = 'column'
+    body.style.gap = '30px'
+    //hanging page refresh on just created button 
+    button.addEventListener('click', function () {
+        location.reload()
+    })
+    //creating image
+    const myImage = document.createElement('img')
+    myImage.src = Image
+    //add image and button to the body
+    body.append(myImage, button)
 }
 
 
